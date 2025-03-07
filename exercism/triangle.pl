@@ -11,7 +11,8 @@ triangle(A, B, C, R).
     y A B C corresponden a la longitud de un triangulo isosceles.
 
 triangle(A, B, C).
-    es cierto si A, B y C corresponden a las longiudes de un triangulo.
+    es cierto si A, B y C corresponden a las longiudes de un triangulo
+    
 
 */
 
