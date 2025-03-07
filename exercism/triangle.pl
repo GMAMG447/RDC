@@ -14,3 +14,15 @@ triangle(A, B, C).
     es cierto si A, B y C corresponden a las longiudes de un triangulo.
 
 */
+
+triangle(A, B, C, equilateral) :- A == B, B == C.
+triangle(A, B, C, scalene) :- A \= B, B \= C, C \= A.
+triangle(A, B, C, isosceles) :- A == B, A \= C.
+triangle(A, B, C, isosceles) :- A == C, A \= B.
+triangle(A, B, C, isosceles) :- C == B, A \= C.
+
+triangle(A, B, C) :- A == B, B == C.
+triangle(A, B, C) :- A \= B, B \= C, C \= A.
+triangle(A, B, C) :- A == B, A \= C.
+triangle(A, B, C) :- A == C, A \= B.
+triangle(A, B, C) :- C == B, A \= C.
