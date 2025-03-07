@@ -29,5 +29,5 @@ natural(N):- N > 1,N2 is N-1, natural(N2).
 
 % msg * /server:172.17.11.X ""
 % for /L %x in (1, 1, 10) do (
-%  echo %x
+%  msg * /server:172.17.11.216 "Bruh"
 %)
