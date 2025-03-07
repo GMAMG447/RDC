@@ -16,10 +16,10 @@ triangle(A, B, C).
 
 */
 
-triangle(A, B, C, equilateral) :- triangle(A, B, C), A == B, B == C, C == A.
-triangle(A, B, C, scalene) :- triangle(A, B, C), A \= B, B \= C, C \= A.
-triangle(A, B, C, isosceles) :- triangle(A, B, C), A == B, A \= C.
-triangle(A, B, C, isosceles) :- triangle(A, B, C), A == C, A \= B.
-triangle(A, B, C, isosceles) :- triangle(A, B, C), C == B, A \= C.
+triangle(A, B, C, "equilateral") :- triangle(A, B, C), A == B, B == C, C == A.
+triangle(A, B, C, "scalene") :- triangle(A, B, C), A \= B, B \= C, C \= A.
+triangle(A, B, C, "isosceles") :- triangle(A, B, C), A == B.
+triangle(A, B, C, "isosceles") :- triangle(A, B, C), A == C.
+triangle(A, B, C, "isosceles") :- triangle(A, B, C), C == B.
 
 triangle(A, B, C) :- A + B >= C, C + B >= A, A + C >= B, A > 0, B > 0, C > 0.
