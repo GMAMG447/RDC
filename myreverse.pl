@@ -14,12 +14,11 @@ R = [5,4,3,2,1]
 
 */
 
-// Damos una solucion para el caso mas pequeño, en este caso lista vacia.
+/* Damos una solucion para el caso mas pequeño, en este caso lista vacia. */
 
 my_reverse([], []).
 
-// 
-//append([1,2,3], [4,5], R). : Junta dos listas, devuelve [1,2,3,4,5].
+/* append([1,2,3], [4,5], R). : Junta dos listas, devuelve [1,2,3,4,5]. */
 
 my_reverse([Cab|Resto], R2) :- my_reverse(Resto,R), append(R, [Cab], R2).
 
