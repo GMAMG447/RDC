@@ -1,5 +1,4 @@
-/*
-
+  /*
 sudoku(Matrix).
   Es cierto si Matrix unifica con
   una matriz 9x9 casillas, (Linea 15)
