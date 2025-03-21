@@ -31,9 +31,9 @@ string_codes(String,codes)
 
 blanco(32).
 blanco(45).
-quita_blancos(L,R) :- exclude(blanco,C,R), string_lower(L,Low), string_codes(Low,C).
+quita_blancos(L,R) :- string_lower(L,Low), string_codes(Low,C),exclude(blanco,C,R).
 
-isogram(S) :- all_distinct(R), quita_blancos(S,R).
+isogram(S) :-  quita_blancos(S,R),all_distinct(R).
 
 
 
