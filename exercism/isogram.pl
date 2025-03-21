@@ -29,8 +29,8 @@ string_lower(+String, string)
 string_codes(String,codes)
 */
 
-blanco(32).
-blanco(45).
+blanco(N) :- N == 32.
+blanco(N) :- N == 45.
 quita_blancos(L,R) :- string_lower(L,Low), string_codes(Low,C),exclude(blanco,C,R).
 
 isogram(S) :-  quita_blancos(S,R),all_distinct(R).
