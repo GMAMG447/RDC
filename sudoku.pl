@@ -2,9 +2,10 @@
 
 sudoku(Matrix).
   Es cierto si Matrix unifica con
-  una matriz 9x9 casillas, divido en 9 bloques
-  de 3x3 casillas, con los numeros del 1 añ 9,
-  cun numeros distintos por filas, distintos por
+  una matriz 9x9 casillas, (Linea 15)
+  con los numeros del 1 al 9, (Linea 16)
+  con numeros distintos por filas, (Linea 21)
+  distintos por
   columnas y distintos por cada bloque 3x3.
 
 */
@@ -25,3 +26,4 @@ blocks([], [], []).
 blocks([N1,N2,N3|Ns1], [N4,N5,N6|Ns2], [N7,N8,N9|Ns3]) :-
         all_distinct([N1,N2,N3,N4,N5,N6,N7,N8,N9]),
         blocks(Ns1, Ns2, Ns3).
+
