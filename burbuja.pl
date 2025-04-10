@@ -15,6 +15,11 @@ Principio de induccion
 
 */
 
+burbuja(Lista, R) :- 
+  append(L1,[E1,E2|L2], Lista), E1 > E2,
+  append(L1,[E1,E2|L2], Lista2), 
+  burbuja(Lista2, R).
+
 ordenada([]).
 ordenada([_]).
 ordenada([Cab1,Cab2|Resto]) :- Cab1<Cab2, ordenada(Cab2|Resto). % Se ponen las restricciones como comparaciones delante.
