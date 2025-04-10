@@ -1,11 +1,9 @@
-%-----------------------------------------------------
+/*-----------------------------------------------------
 % ordena_burbuja(+Lista, -ListaR).
 %  es cierto cuando ListaR unifica con una lista que
 %  contiene los mismos elementos que Lista ordenados
 %  de menor a mayor.
 %-----------------------------------------------------
-
-/*
 
 ordenada(Lista)
   es cierto si los elementos de Lista están ordenados 
