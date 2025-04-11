@@ -1,8 +1,8 @@
-/*
+
 
  :- use_module(library(clpfd)).
 
-*/
+
 
 solution(Pairs, Water, Zebra, Vs) :-
         Table   = [Houses,Nations,Drinks,Smokes,Animals],
