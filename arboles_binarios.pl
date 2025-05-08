@@ -64,22 +64,15 @@ altura(ArbolBin, Alt)
   
 altura(nil,0).
 
-altura(a(Cab,A1,A2), Alt) :-
+altura(a(_,A1,A2), Alt) :-
   altura(A1, Alt1),
   altura(A2, Alt2),
-  Alt1 < Alt2
-  Alt is Alt2 + 1.
-
-altura(a(Cab,A1,A2), Alt) :-
-  altura(A1, Alt1),
-  altura(A2, Alt2),
-  Alt1 >= Alt2
-  Alt is Alt1 + 1.
+  Alt is max(Alt1,Alt2) + 1.
 
 balanceado(a(_, AI, AD)) :-
-  altura(AI,ai),
-  altura(AD,ad),
-  abs(ai - ad) <= 1.
+  altura(AI,Ai),
+  altura(AD,Ad),
+  abs(Ai - Ad) <= 1.
 
 
   
