@@ -48,7 +48,7 @@ balanceado(Arbol)
 
 crea_ab([], nil).
 
-crea_ab([Cab|Resto], a(Cab, A1, A2)) :-
+crea_ab([Cab | Resto] , a(Cab, A1, A2)) :-
   length(Resto, I),
   Med is L div 2,
   length(L1, Med), /* Crea una lista de la mitad de longitud de Lista */
