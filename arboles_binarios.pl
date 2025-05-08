@@ -20,8 +20,8 @@ arbol1(
   ).
 
 arbol2(
-  a(1, a(2, a(4, nil, nil), a(5, nil, nil)),
-    a(3, a(6, nil, nil)), a(7, a(8, nil, nil), nil))
+  a(1, a(2, a(4, nil,nil), a(5, nil, nil)),
+    a(3, a(6, nil, nil), a(7, a(8,nil,nil), nil)))
 ).
 
 cuenta_nodos(nil,0).
@@ -30,3 +30,16 @@ cuenta_nodos(a(_, AI, AD), R) :-
   cuenta_nodos(AI,RI), 
   cuenta_nodos(AD,RD),
   R is RI + RD + 1.
+
+
+/*
+
+crea_ab(Lista, ArbolBinario)
+  Es cierto si ArbolBinario unifica con un arbol binario
+  balanceado que contiene todas las etiquetas de Lista.
+  
+balanceado(Arbol)
+  Es cierto si <<para todo nodo>> de Arbol la diferencia entre
+  la altura del subarbol izq y la del derecho sea como maximo 1.
+  
+*/
