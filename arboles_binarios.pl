@@ -19,10 +19,12 @@ arbol1(
   a(1, a(2,nil,nil), a(3,nil,nil))
   ).
 
-arbol2(
-  a(1, a(2, a(4, nil,nil), a(5, nil, nil)),
-    a(3, a(6, nil, nil), a(7, a(8,nil,nil), nil)))
-).
+/*
+  arbol2(
+    a(1, a(2, a(4, nil,nil), a(5, nil, nil)),
+      a(3, a(6, nil, nil), a(7, a(8,nil,nil), nil)))
+  ).
+*/
 
 cuenta_nodos(nil,0).
 
@@ -43,3 +45,18 @@ balanceado(Arbol)
   la altura del subarbol izq y la del derecho sea como maximo 1.
   
 */
+
+crea_ab([], nil).
+
+crea_ab([Cab|Resto], a(Cab, A1, A2)) :-
+  length(Resto, I),
+  Med is L div 2,
+  length(L1, Med), /* Crea una lista de la mitad de longitud de Lista */
+  append(L1, L2, Resto),
+  crea_ab(L1, A1),
+  crea_ab(L2, A2).
+
+
+  
+  
+  
