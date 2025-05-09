@@ -74,6 +74,58 @@ balanceado(a(_, AI, AD)) :-
   altura(AD,Ad),
   abs(Ai - Ad) <= 1.
 
+   arbol1(
+  a(1, a(2,nil,nil), a(3,nil,nil))
+  ).
+ 
+ suma_nodos(nil, 0).
+  
+ suma_nodos(a(Elem, AI, AD), R):- 
+	suma_nodos(AI, RI),
+	suma_nodos(AD, RD),
+	R is Elem + RI + RD.
+	
+miembro(Elem, a(Elem, _, _)).
+miembro(Elem, a(_, AI, _)):- miembro(Elem, AI).
+miembro(Elem, a(_, _, AD)):- miembro(Elem, AD).
+
+/*
+
+inorden(AB, ListaRecorrido)
+	Es cierto si ListaRecorrido unifica con las etiquetas
+	de AB recorridas en inorden.
+	
+preorden(AB, ListaRecorrido)
+	Es cierto si ListaRecorrido unifica con las etiquetas
+	de AB recorridas en preorden.
+	
+postorden(AB, ListaRecorrido)
+	Es cierto si ListaRecorrido unifica con las etiquetas
+	de AB recorridas en postorden.
+
+anchura(AB, ListaRecorrido)
+	
+*/
+
+preorden(nil,[]).
+
+preorden(a( E, AI, AD), L) :- 
+	preorden( AI, LI),
+	preorden( AD, LD), 
+	append([[E],LI, LD], L).
+	
+postorden(nil,[]).
+postorden(a( E, AI, AD), L) :- 
+	postorden( AI, LI),
+	postorden( AD, LD), 
+	append([LI,LD,[E]], L).
+
+inorden(nil,[]).
+inorden(a( E, AI, AD), L) :- 
+	inorden( AI, LI),
+	inorden( AD, LD), 
+	append([LI,[E],LD], L).
+
 
   
   
